@@ -12,7 +12,7 @@ let str = `Juan`;
 let num = 2.12345;
 
 // Object syntax
-const obj = {
+const objName = {
   message: "hello",
   msg2: "bonjour",
 };
@@ -31,11 +31,11 @@ function foo() {
 }
 
 // review: calling a function
-// foo();
+foo();
 
 // calling a method
 // objectName.methodName()
-// obj2.method1();
+obj2.method1();
 
 // when would you use an object instead of a regular variable or vice versa?
 const player = {
@@ -56,8 +56,11 @@ let currentGoals = 5;
 const bicycle = {
   color: "blue",
   electric: false,
+  method1: function () {
+    console.log("long form of declaring a method");
+  },
   start() {
-    console.log("You begin to pedal the bike.");
+    console.log("You began to pedal the bike.");
     return 2;
   },
   bikeColor() {
@@ -65,8 +68,20 @@ const bicycle = {
   },
 };
 
-// console.log(bicycle);
+console.log(bicycle);
 
 // how do you change the color of the bike?
+bicycle.color = "red";
+console.log(bicycle);
 
 // how do you change the start method?
+bicycle.start();
+bicycle.start = function () {
+  console.log("this is the new start function");
+};
+bicycle.start();
+bicycle.method1();
+
+// button1.onMouseIn = function(){
+//   button1.setColor("xy");
+// }

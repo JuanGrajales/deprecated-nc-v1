@@ -1,5 +1,9 @@
 // Everyone must install prettier extension
 
+// Josh's recommendations
+// https://javascript.info/
+// https://github.com/getify/You-Dont-Know-JS
+
 // How to create a class
 // step 1: use keyword class
 // step 2: write class name using PascalCase (every first letter of a word should start with a capital letter)

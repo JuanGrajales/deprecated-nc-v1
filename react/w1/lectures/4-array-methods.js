@@ -14,6 +14,9 @@ let evenArr2 = filterArr.filter((number, index) => {
   return number % 2 === 0;
 });
 
+// console.log(filterArr);
+// console.log(evenArr2);
+
 let evenArr3 = filterArr.filter((number, index) => number % 2 === 0);
 
 // console.log(evenArr3);
@@ -46,12 +49,12 @@ let sum2 = reduceArr.reduce((accum, curr, index) => {
   return accum + curr;
 }, 0);
 
-console.log(sum2);
-// console.log(reduceArr);
+// console.log(sum2);
+console.log(reduceArr);
 
 // array method that mutates original array?
 reduceArr.reverse();
-// console.log(reduceArr);
+console.log(reduceArr);
 
 // how to check if there is a duplicate name in an array before adding another name?
 let names = [
@@ -62,3 +65,27 @@ let names = [
   { name: "Anwar", age: "26" },
   { name: "Jonathan", age: "25" },
 ];
+
+let newName = {
+  name: "Josh",
+  age: "21",
+};
+
+const duplicates = names.filter((eachName) => {
+  return eachName.name === newName.name;
+});
+
+console.log(duplicates);
+
+// js 0 === false 1> === true
+if (duplicates.length === 0) {
+  names.push(newName);
+} else {
+  console.log("cannot add duplicate name");
+}
+
+if (duplicates.length) {
+  console.log("cannot add duplicate name");
+} else {
+  names.push(newName);
+}

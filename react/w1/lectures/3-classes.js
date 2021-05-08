@@ -1,5 +1,6 @@
 // class syntax
 class ClassName {
+  // PascalCase
   constructor(param1, param2 = "hi") {
     this.property1 = param1;
     this.property2 = param2;
@@ -13,7 +14,9 @@ class ClassName {
   }
 }
 
-let objFromClass = new ClassName("test");
+let objFromClass = new ClassName("test", "second param");
+
+console.log(objFromClass);
 
 // monopoly
 let player1 = {
@@ -22,6 +25,9 @@ let player1 = {
   houses: [],
   roll() {
     console.log(`rolling dice`);
+  },
+  method1() {
+    console.log("another one");
   },
 };
 
@@ -32,6 +38,9 @@ let player2 = {
   roll() {
     console.log(`rolling dice`);
   },
+  method1() {
+    console.log("another one");
+  },
 };
 
 let player3 = {
@@ -41,6 +50,9 @@ let player3 = {
   roll() {
     console.log(`rolling dice`);
   },
+  method1() {
+    console.log("another one");
+  },
 };
 
 let player4 = {
@@ -49,6 +61,9 @@ let player4 = {
   houses: [],
   roll() {
     console.log(`rolling dice`);
+  },
+  method1() {
+    console.log("another one");
   },
 };
 
@@ -66,6 +81,10 @@ class Player {
   balance() {
     console.log(`${this.name} has ${this.money} amount of money left.`);
   }
+
+  method1() {
+    console.log("another one");
+  }
 }
 
 let p1 = new Player("Michael", 100000, []);
@@ -73,6 +92,7 @@ let p2 = new Player("Katherine", 100000, []);
 let p3 = new Player("Serena", 100000, []);
 let p4 = new Player("Kristen", 100000, []);
 
+// What is Object Oriented Programming?
 // OOP: APIE
 // Abstraction
 // Encapsulation

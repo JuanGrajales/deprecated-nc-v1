@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Student {
+        constructor(name, email, community) {
+          this.name = name;
+          this.email = email;
+          this.community = community;
+        }
+      }
+
+      class Bootcamp {
+        constructor(name, level, students = []) {
+          this.name = name;
+          this.level = level;
+          this.students = students;
+        }
+
+        registerStudent(newStudent) {
+          const duplicates = this.students.filter((eachStudent) => {
+            return eachStudent.email === newStudent.email;
+          });
+
+          if (duplicates.length === 0) {
+            this.students.push(newStudent);
+            console.log(
+              `Registering ${newStudent.email} to the bootcamp Web Dev Fundamentals.`
+            );
+          } else {
+            console.log(`${newStudent.email} is already registered`);
+          }
+        }
+      }
+
+      //   let myCar1 = new Car("Ford", 2014);
+      const b1 = new Bootcamp("react", 1);
+
+      console.log(b1);
+    </script>
+  </body>
+</html>

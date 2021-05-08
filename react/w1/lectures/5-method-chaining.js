@@ -13,5 +13,5 @@ let strArrRev = strAsArr.reverse(); // [ 'J', 'u', 'a', 'n' ]
 let revStr = strArrRev.join(""); //"Juan"
 // console.log(revStr);
 
-let strReverse = str;
+let strReverse = str.split("").reverse().join("");
 // console.log(strReverse);

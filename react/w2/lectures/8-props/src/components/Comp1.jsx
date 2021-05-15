@@ -14,7 +14,10 @@ class Comp1 extends Component {
       <div>
         <h3>Comp1</h3>
         <p>
-          User: {this.state.user} color: {this.state.color}
+          state data User: {this.state.user} color: {this.state.color}
+        </p>
+        <p>
+          props data User: {this.props.user} color: {this.props.color}
         </p>
       </div>
     );

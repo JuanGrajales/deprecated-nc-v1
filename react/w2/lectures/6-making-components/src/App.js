@@ -1,12 +1,15 @@
-import "./App.css";
+import React, { Component } from "react";
+import Comp1 from "./components/Comp1";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Let's components</h1>
-      {/* ternary to display component if user is logged in */}
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        Let's make components
+        <Comp1 />
+      </div>
+    );
+  }
 }
 
 export default App;

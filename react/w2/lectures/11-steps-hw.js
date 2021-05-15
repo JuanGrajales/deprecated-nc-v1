@@ -1,3 +1,5 @@
+// EVERYONE - submit one question on the 3-React channel and class channel. Question could be something you already know the answer to, something you have no clue about, or something you want to learn more about.
+
 // Kelley - How to create a class component
 
 // Rodrick - How to create a state for a class component

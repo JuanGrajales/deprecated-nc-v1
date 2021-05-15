@@ -16,12 +16,12 @@ class App extends Component {
         <h1>Props... oooof...</h1>
         <h3>App Component</h3>
         <p>
-          User: {this.state.user} color: {this.state.color}
+          State data User: {this.state.user} color: {this.state.color}
         </p>
         <button onClick={() => this.setState({ color: "blue" })}>
           Change color
         </button>
-        <Comp1 />
+        <Comp1 user={this.state.user} color={this.state.color} />
       </div>
     );
   }

@@ -15,11 +15,41 @@ class CampsiteInfo extends Component {
       </div>
     );
   }
+
+  renderComments(comments) {
+    if (comments) {
+      return (
+        <div>
+          <h4>Comments</h4>
+          {comments.map((comment) => {
+            return (
+              <div className="col-md-5 m-1">
+                <p>
+                  {comment.text}
+                  <br />
+                  -- {comment.author},{" "}
+                  {new Intl.DateTimeFormat("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "2-digit",
+                  }).format(new Date(Date.parse(comment.date)))}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      );
+    }
+    return <div></div>;
+  }
   render() {
     // only display the data of the campsite if the data exists (i.e. when the user clicks on a campsite)
     if (this.props.campsite) {
       return (
-        <div className="row">{this.renderCampsite(this.props.campsite)}</div>
+        <div className="row">
+          {this.renderCampsite(this.props.campsite)}
+          {this.renderComments(this.props.campsite.comments)}
+        </div>
       );
     }
     // if the user hasn't clicked on a campsite then display nothing

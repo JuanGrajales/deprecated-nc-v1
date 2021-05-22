@@ -1,4 +1,5 @@
 import React from "react";
+// step 1 EDIT
 import {
   Card,
   CardImg,
@@ -7,7 +8,10 @@ import {
   Breadcrumb,
   BreadcrumbItem,
 } from "reactstrap";
+// step 1 EDIT
+// step 2 ADD
 import { Link } from "react-router-dom";
+// step 2 ADD
 
 function RenderCampsite({ campsite }) {
   return (
@@ -15,6 +19,9 @@ function RenderCampsite({ campsite }) {
       <Card>
         <CardImg top src={campsite.image} alt={campsite.name} />
         <CardBody>
+          {/* // step 3 REMOVE */}
+          {/* <CardTitle>{campsite.name}</CardTitle> */}
+          {/* // step 3 REMOVE */}
           <CardText>{campsite.description}</CardText>
         </CardBody>
       </Card>
@@ -53,6 +60,7 @@ function CampsiteInfo(props) {
   if (props.campsite) {
     return (
       <div className="container">
+        {/* // step 4 ADD */}
         <div className="row">
           <div className="col">
             <Breadcrumb>
@@ -65,6 +73,7 @@ function CampsiteInfo(props) {
             <hr />
           </div>
         </div>
+        {/* // step 4 ADD */}
         <div className="row">
           <RenderCampsite campsite={props.campsite} />
           <RenderComments comments={props.comments} />

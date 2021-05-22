@@ -1,4 +1,5 @@
 import React from "react";
+// step 1 EDIT
 import {
   Card,
   CardImg,
@@ -7,6 +8,7 @@ import {
   Breadcrumb,
   BreadcrumbItem,
 } from "reactstrap";
+// step 1 EDIT
 import { Link } from "react-router-dom";
 
 function RenderDirectoryItem({ campsite }) {
@@ -33,6 +35,7 @@ function Directory(props) {
 
   return (
     <div className="container">
+      {/* // step 2 ADD */}
       <div className="row">
         <div className="col">
           <Breadcrumb>
@@ -45,6 +48,7 @@ function Directory(props) {
           <hr />
         </div>
       </div>
+      {/* // step 2 ADD */}
       <div className="row">{directory}</div>
     </div>
   );

@@ -2,6 +2,16 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.card-title {
+  font: 500 1.25rem "Lobster", cursive;
+}
+
+.card-img-overlay .card-title {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* // step 1 ADD */
 h1,
 h2,
 h3,
@@ -9,18 +19,8 @@ h3,
   font-family: "Lobster", cursive;
 }
 
-.card-title {
-  font-weight: 500;
-  font-size: 1.25rem;
-}
-
 h2 {
   color: #3046c5;
-}
-
-.card-img-overlay .card-title {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .row-content {
@@ -48,3 +48,4 @@ h2 {
 .navbar-dark {
   background-color: #901cad;
 }
+/* // step 1 ADD */

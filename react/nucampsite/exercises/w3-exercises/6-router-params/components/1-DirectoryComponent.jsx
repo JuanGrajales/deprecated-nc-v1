@@ -1,23 +1,22 @@
 import React from "react";
-import {
-  Card,
-  CardImg,
-  CardImgOverlay,
-  CardTitle,
-  Breadcrumb,
-  BreadcrumbItem,
-} from "reactstrap";
+import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
+// step 1 ADD
 import { Link } from "react-router-dom";
+// step 1 ADD
 
 function RenderDirectoryItem({ campsite }) {
   return (
     <Card>
+      {/* // step 2 EDIT */}
       <Link to={`/directory/${campsite.id}`}>
+        {/* // step 2 EDIT */}
         <CardImg width="100%" src={campsite.image} alt={campsite.name} />
         <CardImgOverlay>
           <CardTitle>{campsite.name}</CardTitle>
         </CardImgOverlay>
+        {/* // step 2 EDIT */}
       </Link>
+      {/* // step 2 EDIT */}
     </Card>
   );
 }
@@ -33,18 +32,6 @@ function Directory(props) {
 
   return (
     <div className="container">
-      <div className="row">
-        <div className="col">
-          <Breadcrumb>
-            <BreadcrumbItem>
-              <Link to="/home">Home</Link>
-            </BreadcrumbItem>
-            <BreadcrumbItem active>Directory</BreadcrumbItem>
-          </Breadcrumb>
-          <h2>Directory</h2>
-          <hr />
-        </div>
-      </div>
       <div className="row">{directory}</div>
     </div>
   );

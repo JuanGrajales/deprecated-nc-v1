@@ -25,8 +25,12 @@ const RenderPartner = ({ partner }) => {
 };
 
 function About(props) {
-  const partners = props.partners.map((partner) => {
-    return <h5>{partner.name}</h5>;
+  const partners = props.partners.map((partnerObject) => {
+    return (
+      <Media tag="li" key={partnerObject.id}>
+        <RenderPartner partner={partnerObject} />
+      </Media>
+    );
   });
 
   return (

@@ -4,7 +4,15 @@ let obj = {
   fname: "Juan",
   age: 21,
   stack: "MERN",
+  obj2: {
+    p1: "ahmed",
+  },
 };
+
+// nested object destructuring
+let {
+  obj2: { p1 },
+} = obj;
 
 // let fname = obj.fname;
 // let age = obj.age;
@@ -14,16 +22,18 @@ let obj = {
 // let { age } = obj;
 // let { stack } = obj;
 
-// let { fname, age, stack } = obj;
+let { fname, age, stack } = obj;
 // console.log(fname, age, stack);
 
 // destructuring params of functions
 
 function func(objParam) {
-  console.log(objParam);
+  console.log(objParam.fname);
+  console.log(objParam.age);
+  console.log(objParam.stack);
 }
 
-// func(obj);
+func(obj);
 
 function func2({ fname, age, stack }) {
   console.log("property 1: " + fname);

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import Page1 from "./components/Page1";
 import Test from "./components/Test";
 import Test2 from "./components/Test2";
 
@@ -16,17 +17,23 @@ class App extends Component {
             <li>
               <Link to="/test/2">Why exact path2?</Link>
             </li>
+            <li>
+              <Link to="/page1">Page 1</Link>
+            </li>
           </ul>
           <h2>
             Switch will choose the route that has the path matching the url
           </h2>
           <Switch>
-            <Route path="/test" render={() => <Test />} />
-            <Route path="/test/2" render={() => <Test2 />} />
+            {/* <Route exact path="/page1" render={() => <Page1 />} /> */}
+            <Route exact path="/test" render={() => <Test />} />
+            <Route exact path="/test/2" render={() => <Test2 />} />
             <Route
               path="/router-props"
               render={(props) => <Test {...props} />}
             />
+            {/* example of when not to use exact prop */}
+            <Route path="/" render={() => <NotFound />} />
           </Switch>
         </div>
       </BrowserRouter>

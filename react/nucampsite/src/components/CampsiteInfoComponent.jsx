@@ -81,6 +81,20 @@ class CommentForm extends Component {
                   name="author"
                   className="form-control"
                   placeholder="Your name"
+                  validators={{
+                    required: (val) => val?.length > 0,
+                    minLength: (val) => val?.length > 2,
+                  }}
+                />
+                <Errors
+                  className="text-danger"
+                  model=".author"
+                  show="touched"
+                  component="div"
+                  messages={{
+                    required: "Required",
+                    minLength: "Must be at least 2 characters",
+                  }}
                 />
               </div>
               <div className="form-group">

@@ -9,11 +9,12 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const RenderPartner = ({ partner }) => {
+function RenderPartner({ partner }) {
   if (partner) {
+    // if partner data exist display the HTML with data
     return (
       <React.Fragment>
-        <Media object src={partner.image} atl={partner.name} width="150" />
+        <Media object src={partner.image} alt={partner.name} width="150" />
         <Media body className="ml-5 mb-4">
           <Media heading>{partner.name}</Media>
           {partner.description}
@@ -21,14 +22,14 @@ const RenderPartner = ({ partner }) => {
       </React.Fragment>
     );
   }
-  return <div></div>;
-};
+  return <div></div>; // if the partner data does not exist then don't display anything
+}
 
 function About(props) {
-  const partners = props.partners.map((partnerObject) => {
+  const partners = props.partners.map((partner) => {
     return (
-      <Media tag="li" key={partnerObject.id}>
-        <RenderPartner partner={partnerObject} />
+      <Media tag="li" key={partner.id}>
+        <RenderPartner partner={partner} />
       </Media>
     );
   });

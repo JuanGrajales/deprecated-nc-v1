@@ -8,14 +8,18 @@ import {
   Row,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+// step 1 EDIT ADD
 import { Control, LocalForm, Errors } from "react-redux-form";
+// step 1 EDIT ADD
 
+// step 2 ADD
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
 const minLength = (len) => (val) => val && val.length >= len;
 const isNumber = (val) => !isNaN(+val);
 const validEmail = (val) =>
   /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+// step 2 ADD
 
 class Contact extends Component {
   constructor(props) {
@@ -105,6 +109,7 @@ class Contact extends Component {
                     name="firstName"
                     placeholder="First Name"
                     className="form-control"
+                    // step 3 ADD
                     validators={{
                       required,
                       minLength: minLength(2),
@@ -122,6 +127,7 @@ class Contact extends Component {
                       maxLength: "Must be 15 characters or less",
                     }}
                   />
+                  {/* // step 3 ADD */}
                 </Col>
               </Row>
               <Row className="form-group">
@@ -135,6 +141,7 @@ class Contact extends Component {
                     name="lastName"
                     placeholder="Last Name"
                     className="form-control"
+                    // step 4 ADD
                     validators={{
                       required,
                       minLength: minLength(2),
@@ -152,6 +159,7 @@ class Contact extends Component {
                       maxLength: "Must be 15 characters or less",
                     }}
                   />
+                  {/* // step 4 ADD */}
                 </Col>
               </Row>
               <Row className="form-group">
@@ -165,6 +173,7 @@ class Contact extends Component {
                     name="phoneNum"
                     placeholder="Phone number"
                     className="form-control"
+                    // step 5 ADD
                     validators={{
                       required,
                       minLength: minLength(10),
@@ -174,7 +183,7 @@ class Contact extends Component {
                   />
                   <Errors
                     className="text-danger"
-                    model=".phoneNum"
+                    model=".firstName"
                     show="touched"
                     component="div"
                     messages={{
@@ -184,6 +193,7 @@ class Contact extends Component {
                       isNumber: "Must be a number",
                     }}
                   />
+                  {/* // step 5 ADD */}
                 </Col>
               </Row>
               <Row className="form-group">
@@ -197,6 +207,7 @@ class Contact extends Component {
                     name="email"
                     placeholder="Email"
                     className="form-control"
+                    // step 6 ADD
                     validators={{
                       required,
                       validEmail,
@@ -204,7 +215,7 @@ class Contact extends Component {
                   />
                   <Errors
                     className="text-danger"
-                    model=".email"
+                    model=".firstName"
                     show="touched"
                     component="div"
                     messages={{
@@ -212,6 +223,7 @@ class Contact extends Component {
                       validEmail: "Invalid email address",
                     }}
                   />
+                  {/* // step 6 ADD */}
                 </Col>
               </Row>
               <Row className="form-group">

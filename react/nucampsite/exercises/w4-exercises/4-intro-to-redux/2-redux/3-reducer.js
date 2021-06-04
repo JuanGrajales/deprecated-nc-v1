@@ -1,3 +1,4 @@
+// step 1 ADD
 import { CAMPSITES } from "../shared/campsites";
 import { COMMENTS } from "../shared/comments";
 import { PARTNERS } from "../shared/partners";
@@ -13,3 +14,4 @@ export const initialState = {
 export const Reducer = (state = initialState, action) => {
   return state;
 };
+// step 1 ADD

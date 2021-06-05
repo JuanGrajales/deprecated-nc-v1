@@ -47,3 +47,10 @@ export const myStore = createStore(
   allReducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+
+// if you want to make a change to the data in the state of your redux store then you will have to dispatch an action
+
+// four main concepts of redux: actions (are objects and they describe what is going to change in the store and can have a value, often called a payload, that will tell the store the new value of the state), reducers (reducers will actually provide the new value of the state based on the action), store (where the data is saved), dispatch (a method that send the action to the store and then the store sends it to all the reducers)
+
+// making components, props, state, just basic react concepts
+// put redux on the back burner

@@ -28,14 +28,20 @@ export const login = () => {
 export const counterReducer = (state = 0, action) => {
   console.log("counterReducer state: ", state);
   console.log("counterReducer action object: ", action);
-  switch (action.type) {
-    case INCREMENT:
-      return state + action.payload;
-    case "DECREMENT":
-      return state - 1;
-    default:
-      return state;
+  if (action.type === INCREMENT) {
+    return state + action.payload;
+  } else if (action.type === "DECREMENT") {
+    return state - 1;
   }
+
+  // switch (action.type) {
+  //   case INCREMENT:
+  //     return state + action.payload;
+  //   case "DECREMENT":
+  //     return state - 1;
+  //   default:
+  //     return state;
+  // }
 };
 
 export const loggedReducer = (state = false, action) => {

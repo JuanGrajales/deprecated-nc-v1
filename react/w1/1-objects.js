@@ -9,12 +9,17 @@
 // We will focus on Objects
 
 let str = `Juan`;
-let num = 2.12345;
+let num = 23;
 
 // Object syntax
 const objName = {
   message: "hello",
-  msg2: "bonjour",
+  msg2: 5465,
+  arr: [1, 2, 3, 4, 5],
+  ojb: {
+    prop1: "value1",
+    prop2: "value2",
+  },
 };
 
 // methods vs functions
@@ -31,11 +36,11 @@ function foo() {
 }
 
 // review: calling a function
-// foo();
+foo();
 
 // calling a method
 // objectName.methodName()
-// obj2.method1();
+obj2.method1();
 
 // when would you use an object instead of a regular variable or vice versa?
 const player = {
@@ -68,10 +73,19 @@ const bicycle = {
   },
 };
 
+// objects are references
+// const obj1 = {} // location in memory
+
 // console.log(bicycle);
 
 // how do you change the color of the bike?
+bicycle.color = "red";
 // console.log(bicycle);
 
 // how do you change the start method?
-// bicycle.start();
+bicycle.start();
+bicycle.start = function () {
+  console.log("you hit the brakes");
+};
+
+bicycle.start();

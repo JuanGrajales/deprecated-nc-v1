@@ -1,8 +1,8 @@
 // filter
-let filterArr = [1, 1, 1, 2, 2, 2];
+let filterArr = [1, 2, 11, 4, 5, 6];
 let evenArr = [];
 for (let i = 0; i < filterArr.length; i++) {
-  if (filterArr[i] % 2 === 0) {
+  if (filterArr[i] === 2) {
     evenArr.push(filterArr[i]);
   }
 }
@@ -10,19 +10,18 @@ for (let i = 0; i < filterArr.length; i++) {
 // console.log(evenArr);
 
 let evenArr2 = filterArr.filter((number, index) => {
-  // console.log(`current Index: ${index} number: ${number}`);
-  return number % 2 === 0;
+  return number === 2;
 });
 
 // console.log(filterArr);
 // console.log(evenArr2);
 
-let evenArr3 = filterArr.filter((number, index) => number % 2 === 0);
+let evenArr3 = filterArr.filter((number, index) => number === 2);
 
 // console.log(evenArr3);
 
 // map
-let mapArr = [1, 1, 1, 2, 2, 2];
+let mapArr = [1, 2, 11, 4, 5, 6];
 let doubleArr = [];
 for (let i = 0; i < mapArr.length; i++) {
   doubleArr.push(mapArr[i] * 2);
@@ -44,10 +43,10 @@ for (let i = 0; i < reduceArr.length; i++) {
 
 // console.log(sum);
 
-let sum2 = reduceArr.reduce((accum, curr, index) => {
-  // console.log(`Index = ${index} accum = ${accum} curr = ${curr}`);
-  return accum + curr;
-}, 0);
+let sum2 = reduceArr.reduce((sum, curr, index) => {
+  // console.log(`Index = ${index} sum = ${sum} curr = ${curr}`);
+  return sum + curr;
+}, 5);
 
 // console.log(sum2);
 // console.log(reduceArr);
@@ -75,17 +74,19 @@ const duplicates = names.filter((eachName) => {
   return eachName.name === newName.name;
 });
 
-// console.log(duplicates);
+console.log(duplicates);
 
 // js 0 === false 1> === true
 if (duplicates.length === 0) {
   names.push(newName);
 } else {
-  // console.log("cannot add duplicate name");
+  console.log("cannot add duplicate name");
 }
 
-if (duplicates.length) {
-  // console.log("cannot add duplicate name");
-} else {
-  names.push(newName);
-}
+// if (duplicates.length) {
+//   // console.log("cannot add duplicate name");
+// } else {
+//   names.push(newName);
+// }
+
+console.log(names);

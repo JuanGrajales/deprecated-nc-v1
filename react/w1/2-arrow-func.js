@@ -1,8 +1,8 @@
 // function declartion superpower: hoisting
+// hi();
 function hi() {
   console.log("function declaration");
 }
-// hi();
 
 const hiArrow = () => {
   console.log("arrow function");
@@ -13,19 +13,25 @@ const hiArrow = () => {
 function hi2(name) {
   return { message: name };
 }
+console.log(hi2("Juan"));
 
-const hi2Arrow = (name) => {
-  return { message: name };
+const add = (num1, num2) => {
+  return num1 + num2;
 };
+// console.log(add(1, 2));
 
 // arrow function without explicit return
 function hi3(name) {
   return "hello";
 }
 
-const hi3Arrow = (name) => "hello with arrow function";
+// const hi3Arrow = () => {
+//   return "hello with arrow function"
+// };
 
-console.log(hi3());
+const hi3Arrow = () => "hello with arrow function";
+
+// console.log(hi3());
 // console.log(hi3Arrow());
 
 // arrow function without return and without parenthesis for parameters
@@ -34,4 +40,9 @@ function hi4(name) {
   return "hello";
 }
 
-// const hi4Arrow = (name, param2) => "hello";
+// const hi4Arrow = name => "hello";
+
+function returnObj(prop, value) {
+  return { [prop]: value };
+}
+console.log(returnObj("name", "Juan"));

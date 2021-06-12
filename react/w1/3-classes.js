@@ -2,21 +2,26 @@
 class ClassName {
   // PascalCase
   constructor(param1, param2 = "hi") {
-    this.property1 = param1;
+    this.greeting = param1;
     this.property2 = param2;
+
     // make as many properties as you want
   }
 
   // add methods here
   method1() {
     // how can you print the properties of the object here?
-    console.log("method1");
+    console.log("try 1", this.greeting);
   }
 }
 
-let objFromClass = new ClassName("test", "second param");
+let objFromClass1 = new ClassName("hello", "second param");
+let objFromClass2 = new ClassName("hi", "second param");
+let objFromClass3 = new ClassName("test", "second param");
 
-console.log(objFromClass);
+// console.log(objFromClass1);
+// objFromClass1.method1();
+// objFromClass2.method1();
 
 // monopoly
 let player1 = {
@@ -68,10 +73,11 @@ let player4 = {
 };
 
 class Player {
-  constructor(name, money, houses) {
+  constructor(name, money, houses, battleCry = "wazaaaaaaa") {
     this.name = name;
     this.money = money;
     this.houses = houses;
+    this.battleCry = battleCry;
   }
 
   roll() {
@@ -92,7 +98,9 @@ let p2 = new Player("Katherine", 100000, []);
 let p3 = new Player("Serena", 100000, []);
 let p4 = new Player("Kristen", 100000, []);
 
+// console.log(p1);
 // What is Object Oriented Programming?
+// four pillars of OOP
 // OOP: APIE
 // Abstraction
 // Encapsulation
@@ -101,9 +109,11 @@ let p4 = new Player("Kristen", 100000, []);
 
 // inheritance
 class Vehicle {
-  constructor(type = "Car") {
+  constructor(type = "Car", motorCapacity, prop1, prop2) {
     this.type = type;
-    this.motorCapacity = "2.4L";
+    this.motorCapacity = motorCapacity;
+    this.prop1 = prop1;
+    this.prop2 = prop2;
   }
 
   getType() {
@@ -113,7 +123,7 @@ class Vehicle {
 
 class Motorcycle extends Vehicle {
   constructor(type = "motorcycle", numWheels = 2) {
-    super(type);
+    super(type, "3.6", undefined, "value2");
     this.numWheels = numWheels;
   }
 
@@ -125,4 +135,6 @@ class Motorcycle extends Vehicle {
 let vehicle2 = new Vehicle();
 // vehicle2.getType();
 let bike = new Motorcycle();
-// bike.getType();
+
+console.log(bike);
+bike.getType();

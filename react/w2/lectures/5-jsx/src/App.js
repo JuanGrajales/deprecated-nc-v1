@@ -8,10 +8,10 @@ function App() {
       <p>
         Pretty much looks like HTML except that you can embed JS inside of it
       </p>
-      {/* {3 + 5}
-      {str + " hello"}
-      {5 < 1 ? "true" : "false"} */}
-      {userIsLoggedIn ? "Hi Juan" : "Login Here"}
+      <div>{3 + 5}</div>
+      <div>{str + " hello"}</div>
+      <div>{5 < 1 ? "true" : "false"}</div>
+      <div>{userIsLoggedIn ? "Hi Juan" : "Login Here"}</div>
     </div>
   );
 }

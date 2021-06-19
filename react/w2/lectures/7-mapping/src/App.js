@@ -8,9 +8,9 @@ function App() {
     const newArr = arr.map((eachName) => {
       return (
         <li key={eachName}>
-          <img src="" />
-          <h5>Number of likes</h5>
+          <img src="" alt="this is an image of Brad Pitt" />
           <h1>Name: {eachName}</h1>
+          <h5>Number of likes</h5>
           <ul>Comments</ul>
         </li>
       );

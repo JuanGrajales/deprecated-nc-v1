@@ -21,7 +21,7 @@ class App extends Component {
         <button onClick={() => this.setState({ color: "blue" })}>
           Change color
         </button>
-        <Comp1 />
+        <Comp1 color={this.state.color} user={this.state.user} />
       </div>
     );
   }

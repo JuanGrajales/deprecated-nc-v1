@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import Page1 from "./components/Page1";
 import Test from "./components/Test";
 import Test2 from "./components/Test2";
+import NotFound from "./components/NotFound";
 
 class App extends Component {
   render() {
@@ -26,8 +27,8 @@ class App extends Component {
           </h2>
           <Switch>
             {/* <Route exact path="/page1" render={() => <Page1 />} /> */}
-            <Route path="/test" render={() => <Test />} />
-            <Route path="/test/2" render={() => <Test2 />} />
+            <Route exact path="/test" render={() => <Test />} />
+            <Route exact path="/test/2" render={() => <Test2 />} />
             <Route
               path="/router-props"
               render={(props) => <Test {...props} />}
@@ -62,3 +63,13 @@ export default App;
 // How to display the page for the link the user clicked on?
 // step 1: inside the <Switch></Switch> call the Route component using the following syntax <Route exact path="url/used/in/the/to/attribute/for/the/Link/component" render={() => <ComponentToBeDisplayed />} />
 // step 2: the page where you added the Route component import the component using import { Route } from 'react-router-dom';
+
+// if(urlPath === '/profilePage'){
+//   display a Profile Component
+// }
+// else if(urlPath === '/campsite'){
+//   display a Campsite Component
+// }
+// else if(urlPath === '/about'){
+//   display a About Component
+// }

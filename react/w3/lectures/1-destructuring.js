@@ -22,8 +22,8 @@ let {
 // let { age } = obj;
 // let { stack } = obj;
 
-let { fname, age, stack } = obj;
-// console.log(fname, age, stack);
+let { fname: firstName, age, stack } = obj;
+// console.log(firstName, age, stack);
 
 // destructuring params of functions
 
@@ -33,7 +33,7 @@ function func(objParam) {
   console.log(objParam.stack);
 }
 
-func(obj);
+// func(obj);
 
 function func2({ fname, age, stack }) {
   console.log("property 1: " + fname);

@@ -4,7 +4,7 @@ import Jess from "./components/Jess";
 import Juan from "./components/Juan";
 import Profile from "./components/Profile";
 
-let arr = ["juan", "jess", "Chellie", "Rod"];
+let users = ["juan", "jess", "kelley", "tom"];
 
 class App extends Component {
   render() {
@@ -13,38 +13,38 @@ class App extends Component {
         <div>
           <h2>Nav</h2>
           <ul>
-            <li>
+            {/* <li>
               <Link to="/juan">Juan Profile</Link>
             </li>
             <li>
               <Link to="/jess">Jess Profile</Link>
-            </li>
-            {/* {arr.map((eachPerson) => {
+            </li> */}
+            {users.map((eachPerson) => {
               return (
                 <li>
                   <Link to={`/${eachPerson}`}>{eachPerson} Profile</Link>
                 </li>
               );
-            })} */}
+            })}
           </ul>
           <h2>
             Switch will choose the route that has the path matching the url
           </h2>
           <Switch>
-            <Route exact path="/juan" render={() => <Juan />} />
-            <Route exact path="/jess" render={() => <Jess />} />
-            {/* <Route
+            {/* <Route exact path="/juan" render={() => <Juan />} />
+            <Route exact path="/jess" render={() => <Jess />} /> */}
+            <Route
               exact
               path="/:user"
               render={(props) => <Profile {...props} />}
-            /> */}
+            />
           </Switch>
         </div>
       </BrowserRouter>
     );
   }
 }
-
+// const varName = 'fasjldfk'
 export default App;
 
 function func(param1) {

@@ -9,25 +9,30 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const RenderPartner = ({ partner }) => {
-  if (partner) {
+const RenderPartner = ({ partnerProp }) => {
+  const { image, name, description } = partnerProp;
+  if (partnerProp) {
     return (
       <React.Fragment>
-        <Media object src={partner.image} alt={partner.name} width="150" />
+        <Media object src={image} alt={name} width="150" />
         <Media body className="ml-5 mb-4">
-          <Media heading>{partner.name}</Media>
-          {partner.description}
+          <Media heading>{name}</Media>
+          {description}
         </Media>
       </React.Fragment>
     );
   } else {
-    return <div />;
+    return <div>No partner data passed</div>;
   }
 };
 
 function About(props) {
   const partners = props.partners.map((partner) => {
-    return <h5>{partner.name}</h5>;
+    return (
+      <Media tag="li" key={partner.id}>
+        <RenderPartner partnerProp={partner} />
+      </Media>
+    );
   });
 
   return (

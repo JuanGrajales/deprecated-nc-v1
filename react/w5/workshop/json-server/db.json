@@ -252,6 +252,16 @@
       "contactType": "Email",
       "message": "test",
       "date": "2019-10-25T13:30Z"
+    },
+    {
+      "firstName": "Juan",
+      "lastName": "Grajales",
+      "phoneNum": "1234567890",
+      "email": "j@j.com",
+      "agree": true,
+      "contactType": "Phone",
+      "feedback": "feed",
+      "id": 1
     }
   ]
 }

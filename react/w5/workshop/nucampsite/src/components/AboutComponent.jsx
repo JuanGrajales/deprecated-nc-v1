@@ -8,13 +8,20 @@ import {
   Media,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { Loading } from "./LoadingComponent";
+import { baseUrl } from "../shared/baseUrl";
 
 function RenderPartner({ partner }) {
   if (partner) {
     // if partner data exist display the HTML with data
     return (
       <React.Fragment>
-        <Media object src={partner.image} alt={partner.name} width="150" />
+        <Media
+          object
+          src={baseUrl + partner.image}
+          alt={partner.name}
+          width="150"
+        />
         <Media body className="ml-5 mb-4">
           <Media heading>{partner.name}</Media>
           {partner.description}
@@ -25,8 +32,8 @@ function RenderPartner({ partner }) {
   return <div></div>; // if the partner data does not exist then don't display anything
 }
 
-function About(props) {
-  const partners = props.partners.map((partner) => {
+const PartnerList = (props) => {
+  const partners = props.partners.partnersArr.map((partner) => {
     return (
       <Media tag="li" key={partner.id}>
         <RenderPartner partner={partner} />
@@ -34,6 +41,22 @@ function About(props) {
     );
   });
 
+  if (props.partners.isLoading) {
+    return <Loading />;
+  }
+
+  if (props.partners.errMess) {
+    return <div className="col">{props.partners.errMess}</div>;
+  }
+
+  return (
+    <div className="col mt-4">
+      <Media list>{partners}</Media>
+    </div>
+  );
+};
+
+function About(props) {
   return (
     <div className="container">
       <div className="row">
@@ -103,9 +126,7 @@ function About(props) {
         <div className="col-12">
           <h3>Community Partners</h3>
         </div>
-        <div className="col mt-4">
-          <Media list>{partners}</Media>
-        </div>
+        <PartnerList partners={props.partners} />
       </div>
     </div>
   );

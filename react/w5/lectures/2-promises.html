@@ -10,11 +10,11 @@
     <h1>Promises, Fetch API, & CRUD</h1>
     <script>
       let url = "https://jsonplaceholder.typicode.com/posts";
-      let promise = fetch(url);
+      // let promise = fetch(url);
       // console.log(promise);
       // setTimeout(() => {
       //   console.log(promise);
-      // }, 1000);
+      // }, 250);
 
       // GET - used to retrieve data
       fetch(url, {
@@ -67,7 +67,7 @@
         .then((json) => console.log("PUT", json));
       // .catch(error) => console.log(error))
 
-      // DELETE - delete one or more records
+      // // DELETE - delete one or more records
       url = "https://jsonplaceholder.typicode.com/posts/1";
       fetch(url, {
         method: "DELETE",

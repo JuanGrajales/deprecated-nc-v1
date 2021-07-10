@@ -57,10 +57,59 @@ export const loggedReducer = (state = false, action) => {
   }
 };
 
+const sofas = [
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "sofa1",
+  "last sofa",
+];
+
+export const DELETE_SOFA = "DELETE_SOFA";
+
+// every action you create must have a corresponding case in the switch statement of the corresponding reducer
+export const deleteSofa = () => {
+  return {
+    type: DELETE_SOFA,
+  };
+};
+
+export const sofasReducer = (state = sofas, action) => {
+  console.log("sofasReducer state: ", state);
+  console.log("sofasReducer action object: ", action);
+  switch (action.type) {
+    case DELETE_SOFA:
+      console.log("made it");
+      const sofasCopy = [...state];
+      sofasCopy.pop();
+      return sofasCopy;
+    default:
+      return state;
+  }
+};
+
 // combine reducers
 export const allReducers = combineReducers({
   counter: counterReducer,
   isLogged: loggedReducer,
+  sofas: sofasReducer,
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -69,6 +118,10 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const auth = (store) => (next) => (action) => {
   console.log("auth middleware", action);
   console.log("current state", store.getState());
+  // const user = "juan";
+  // if ("Melissa" !== user) {
+  //   return;
+  // }
   return next(action);
 };
 

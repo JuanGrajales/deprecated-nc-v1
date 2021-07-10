@@ -3,6 +3,24 @@ import React, { Component } from "react";
 class App extends Component {
   state = {
     posts: [],
+    picInfo: "https://placekitten.com/200/300",
+  };
+
+  getNasaPOD = () => {
+    let url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
+    fetch(url, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        this.setState({
+          picInfo: data,
+        });
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   getRequest = () => {
@@ -36,6 +54,11 @@ class App extends Component {
     return (
       <>
         <h1>Fetch</h1>
+        <h3>{this.state.picInfo.title}</h3>
+        <button onClick={this.getNasaPOD}>Get NASA POD</button>
+        <img src={this.state.picInfo.hdurl} width="400" />
+        <br />
+        <br />
         <button onClick={this.getRequest}>Projects</button>
         <ul>{this.displayPosts()}</ul>
       </>
